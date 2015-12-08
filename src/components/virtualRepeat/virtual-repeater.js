@@ -243,7 +243,7 @@ VirtualRepeatContainerController.prototype.sizeScroller_ = function(size) {
 VirtualRepeatContainerController.prototype.autoShrink_ = function(size) {
   var shrinkSize = Math.max(size, this.autoShrinkMin * this.repeater.getItemSize());
   if (this.autoShrink && shrinkSize !== this.size) {
-    if (shrinkSize < (this.originalSize || this.size)) {
+    if (shrinkSize < (this.originalSize || this.size) || !(this.originalSize || this.size)) {
       if (!this.originalSize) {
         this.originalSize = this.size;
       }
